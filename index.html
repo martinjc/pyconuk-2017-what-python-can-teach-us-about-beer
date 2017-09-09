@@ -401,12 +401,12 @@
 
 <section data-transition="none" data-markdown><script type="text/template">
 
-```
+```python
 import requests
 
 from _credentials import ACCESS_TOKEN
 
-API_URL = "https://api.untappd.com/v4/thepub/local
+API_URL = "https://api.untappd.com/v4/thepub/local"
 
 params = {
     access_token: ACCESS_TOKEN
@@ -423,6 +423,92 @@ beer_data = requests.get(API_URL, params=params).json()
 <span class="fragment current-only" data-code-focus="7-11"></span>
 <span class="fragment current-only" data-code-focus="13"></span>
 Note:
+</script></section>
+
+<section data-transition="none" data-markdown><script type="text/template">
+```json
+{
+    "checkin_id": 49287XXX2,
+    "distance": 1.305,
+    "created_at": "Fri, 18 Aug 2017 23:YY:XX +0000",
+    "rating_score": 3.5,
+    "checkin_comment": "",
+    "user": {
+        "uid": ZZZZ8770,
+    },
+    "beer": {
+        "bid": 41DBBB19,
+        "beer_name": "...",
+        "beer_label": "https://untappd.akamaized.net/site/beer_logos/beer-...sm.jpeg",
+        "beer_abv": 10,
+        "beer_ibu": 257,
+        "beer_slug": "...",
+        "beer_description": "...",
+        "is_in_production": 1,
+        "beer_style_id": 227,
+        "beer_style": "IPA - Imperial / Double",
+        "auth_rating": 0,
+        "wish_list": false,
+        "beer_active": 1,
+        "has_had": false
+    },
+    "brewery": {
+        "brewery_id": DDB722,
+        "brewery_name": "...",
+        "brewery_slug": "...",
+        "brewery_label": "https://untappd.akamaized.net/site/brewery_logos/brewery-...4.jpeg",
+        "country_name": "Spain",
+        "country_id": "79",
+        "contact": { ... },
+        "location": { ... },
+        "brewery_active": 1
+    },
+    "venue": {
+        "venue_id": 5VVV12,
+        "venue_name": "Cerveseria ....",
+        "venue_slug": "cerveseria-....",
+        "primary_category": "Nightlife Spot",
+        "parent_category_id": "4d4b7105SGANGLsa06376d81259",
+        "categories": {
+            "count": 1,
+            "items": [
+                {
+                    "category_name": "Brewery",
+                    "category_id": "50327c8591d4c4b30a586d5d",
+                    "is_primary": true
+                }
+            ]
+        },
+        "location": { ... },
+        "contact": { ... },
+        "foursquare": { ... },
+    }
+}
+```
+<span class="fragment current-only" data-code-focus="2-6"></span>
+<span class="fragment current-only" data-code-focus="7-9"></span>
+<span class="fragment current-only" data-code-focus="10-25"></span>
+<span class="fragment current-only" data-code-focus="26-36"></span>
+<span class="fragment current-only" data-code-focus="37-55"></span>
+</script></section>
+
+<section data-transition="none" data-markdown><script type="text/template">
+
+```python
+import requests
+
+from _credentials import ACCESS_TOKEN
+
+API_URL = "https://api.untappd.com/v4/thepub/local"
+
+params = {
+    access_token: ACCESS_TOKEN
+    lat: 51.48,
+    lng: -3.17
+}
+
+beer_data = requests.get(API_URL, params=params).json()
+```
 </script></section>
 
 <section data-transition="none" data-markdown><script type="text/template">
