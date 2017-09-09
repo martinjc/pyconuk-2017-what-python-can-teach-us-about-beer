@@ -393,13 +393,12 @@
 ```
 import requests
 
-from _credentials import API_KEY, API_SECRET
+from _credentials import ACCESS_TOKEN
 
 API_URL = "https://api.untappd.com/v4/thepub/local
 
 params = {
-    client_id: API_KEY,
-    client_secret: API_SECRET,
+    access_token: ACCESS_TOKEN
     lat: 51.48,
     lng: -3.17
 }
@@ -410,9 +409,28 @@ beer_data = requests.get(API_URL, params=params).json()
 <span class="fragment current-only" data-code-focus="1"></span>
 <span class="fragment current-only" data-code-focus="3"></span>
 <span class="fragment current-only" data-code-focus="5"></span>
-<span class="fragment current-only" data-code-focus="7-12"></span>
-<span class="fragment current-only" data-code-focus="14"></span>
+<span class="fragment current-only" data-code-focus="7-11"></span>
+<span class="fragment current-only" data-code-focus="13"></span>
 Note:
+</script></section>
+
+<section data-transition="none" data-markdown><script type="text/template">
+```js
+var get_drinks = function(token, lat, lng, callback) {
+
+    const url = "https://api.untappd.com/v4/thepub/local/";
+
+    var params = {
+        access_token: token,
+        lat: lat,
+        lng: lng,
+    }
+
+    request({url:url, qs:params}, function(err, response, body) {
+        ...
+    }
+}
+```
 </script></section>
 
                 <section data-background-image="img/london.png">
