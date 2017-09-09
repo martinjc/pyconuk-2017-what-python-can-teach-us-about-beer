@@ -388,6 +388,33 @@
 
                 </section>
 
+<section data-transition="none" data-markdown><script type="text/template">
+
+```
+import requests
+
+from _credentials import API_KEY, API_SECRET
+
+API_URL = "https://api.untappd.com/v4/thepub/local
+
+params = {
+    client_id: API_KEY,
+    client_secret: API_SECRET,
+    lat: 51.48,
+    lng: -3.17
+}
+
+beer_data = requests.get(API_URL, params=params).json()
+```
+
+<span class="fragment current-only" data-code-focus="1"></span>
+<span class="fragment current-only" data-code-focus="3"></span>
+<span class="fragment current-only" data-code-focus="5"></span>
+<span class="fragment current-only" data-code-focus="7-12"></span>
+<span class="fragment current-only" data-code-focus="14"></span>
+Note:
+</script></section>
+
                 <section data-background-image="img/london.png">
 
                 </section>
