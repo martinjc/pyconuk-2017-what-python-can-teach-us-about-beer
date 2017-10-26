@@ -73,7 +73,7 @@ def load_venues():
 
 def load_breweries():
     """
-    As vid2venue: int -> dict.
+    As bid2brewery: int -> dict.
     250MB+.
     """
     fp = os.path.join(DROPBOX_DATA_DIR, 'breweries.json')

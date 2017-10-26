@@ -361,6 +361,23 @@
         .line.focus .hljs-emphasis { font-style: italic; }
         .line.focus .hljs-strong { font-weight: bold; }
 
+        .marquee {
+            animation: 1s linear infinite blink_effect;
+        }
+
+        @keyframes blink_effect {
+            0% {
+                visibility: hidden;
+            }
+
+            50% {
+                visibility: hidden;
+            }
+
+            100% {
+                visibility: visible;
+            }
+        }
 
         </style>
 
@@ -374,10 +391,17 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-                <section>
+                <!-- Image "Beer sampler" by Quinn Dombrowski (https://www.flickr.com/photos/quinndombrowski/)
+                    Released CC-BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0/)-->
+                <section data-background-image="img/beer.jpg" data-background-size="cover">
                     <h1>What Python can teach us about Beer</h1>
-                    <h3>@martinjc</h3>
+                    <!-- <img src="img/beer.jpg" alt="" width="300px"> -->
+                    <h3 style="padding-top: 300px;">@martinjc</h3>
                     <h4>PyCon UK 2017</h4>
+                </section>
+
+                <section data-background-image="img/compdj.png" data-background-size="contain">
+                    <h1 style="position: fixed; width: 100%; top: 0px; color: white;" class="marquee">Shameless Plug!</h1>
                 </section>
 
                 <section data-background-image="img/animated.gif" data-background-size="contain">
@@ -535,6 +559,10 @@ var get_drinks = function(token, lat, lng, callback) {
                 </section>
 
                 <section>
+                    <h2><strong>Where</strong> are we looking at?</h2>
+                </section>
+
+                <section>
                     <h3>7 US cities</h3>
                     <h5>New York, Los Angeles, Chicago, Seattle, Denver, Boston, Portland</h5>
                     <h3>6 EU cities</h3>
@@ -562,6 +590,10 @@ var get_drinks = function(token, lat, lng, callback) {
                     <h1>30,931 breweries</h1>
                 </section>
 
+                <section data-background-video='img/pandas.mp4' data-background-video-loop='true'>
+
+                </section>
+
 
 <section data-transition="none" data-markdown><script type="text/template">
 ```python
@@ -586,6 +618,11 @@ for city, checkins in checkin_data.items():
     stats['days'].loc[city] = days
 ```
 </script></section>
+
+                <section>
+                    <h2><strong>Who</strong> are we looking at?</h2>
+                </section>
+
                 <section data-background-image="img/checkins_per_city.png" data-background-size="contain">
 
                 </section>
@@ -594,7 +631,31 @@ for city, checkins in checkin_data.items():
 
                 </section>
 
+                <section data-background-video='img/python.mp4' data-background-video-loop='true'>
+
+                </section>
+
+                <section>
+                    <h2><strong>When</strong> are they drinking beer?</h2>
+                </section>
+
 <section data-transition="none" data-markdown><script type="text/template">
+```python
+for city in CITIES:
+
+    city_d = checkin_data[city]
+
+    for c in city_d:
+        dt  = c['created_at']
+        hourly_data[weekday(dt)][hour(dt)] += 1
+        t_t = (dt.year, dt.month, dt.day, dt.hour)
+        if t_t not in dates:
+            hours_seen[weekday(dt)][hour(dt)] += 1
+            dates.append(t_t)
+```
+</script></section>
+
+<!-- <section data-transition="none" data-markdown><script type="text/template">
 ```python
 def weekday(t):
     if t.hour < 5:
@@ -608,8 +669,188 @@ def hour(t):
     else:
         return 19 + t.hour
 ```
+</script></section> -->
+
+                <section data-transition="none" data-background-image="img/checkins_per_hour_per_day_newyork.png" data-background-size="contain">
+                    <h4 style="position: fixed; top: 0px;">New York</h4>
+                </section>
+
+                <section data-transition="none" data-background-image="img/checkins_per_hour_per_day_london.png" data-background-size="contain">
+                    <h4 style="position: fixed; top: 0px;">London</h4>
+                </section>
+
+                <section data-transition="none" data-background-image="img/checkins_per_hour_per_day_paris.png" data-background-size="contain">
+                    <h4 style="position: fixed; top: 0px;">Paris</h4>
+                </section>
+
+                <section data-transition="none" data-background-image="img/checkins_per_hour_per_day_amsterdam.png" data-background-size="contain">
+                    <h4 style="position: fixed; top: 0px;">Amsterdam</h4>
+                </section>
+
+                <section>
+                    <h2><strong>What</strong> beer are they drinking?</h2>
+                </section>
+
+<section data-transition="none" data-markdown><script type="text/template">
+```python
+global_unique_beer_count = Counter()
+
+for city in CITIES:
+    checkins = checkin_data[city]
+    for c in checkins:
+        beer_id = c['beer']
+        global_unique_beer_count[beer_id] += 1
+
+top_thirty = global_unique_beer_count.most_common(30)
+```
 </script></section>
-			</div>
+
+                <section>
+                    <h1>The top 5 Beers in the US and EU...*</h1>
+                    <p class="fragment">#1: Guinness - Guinness Draught (4.30%) - Ireland - (89928)</p>
+                    <p class="fragment">#2: Heineken - Heineken (5.00%) - Netherlands - (60975)</p>
+                    <p class="fragment">#3: Lagunitas Brewing Company - IPA (6.20%) - United States (CA) - (56768)</p>
+                    <p class="fragment">#4: Goose Island Beer Co. - Goose IPA (5.90%) - United States (IL) - (54484)</p>
+                    <p class="fragment">#5: Revolution Brewing Company - Anti-Hero IPA (6.50%) - United States (IL) - (46538)</p>
+                    <p class="fragment">#6: Anheuser-Busch - Bud Light (4.20%) - United States (MO) - (36783)</p>
+                    <p class="stretch"><small>* assuming our 13 cities are in any way representative</small></p>
+                </section>
+
+                <section>
+                    <h1>The top 5 Beers in the EU...*</h1>
+                    <p class="fragment">#1: Heineken - Heineken (5.00%) - Netherlands - (50171)</p>
+                    <p class="fragment">#2: Guinness - Guinness Draught (4.30%) - Ireland - (45039)</p>
+                    <p class="fragment">#3: BrewDog - Punk IPA (5.60%) - Scotland - (22451)</p>
+                    <p class="fragment">#4: Meantime Brewing Company - London Pale Ale (4.30%) - England - (14940)</p>
+                    <p class="fragment">#5: Grupo Damm - Estrella Damm (5.40%) - Spain - (14763)</p>
+                </section>
+
+                <section>
+                    <h1>The top 5 Beers in the US...*</h1>
+                    <p class="fragment">#1: Lagunitas Brewing Company - IPA (6.20%) - United States (CA) - (48192)</p>
+                    <p class="fragment">#2: Goose Island Beer Co. - Goose IPA (5.90%) - United States (IL) - (48153)</p>
+                    <p class="fragment">#3: Revolution Brewing Company - Anti-Hero IPA (6.50%) - United States (IL) - (46521)</p>
+                    <p class="fragment">#4: Guinness - Guinness Draught (4.30%) - Ireland - (44889)</p>
+                    <p class="fragment">#5: Anheuser-Busch - Bud Light (4.20%) - United States (MO) - (36284)</p>
+                </section>
+
+                <section>
+                    <h1>The top 5 Beers in Copenhagen</h1>
+                    <p>#1: Carlsberg Group - Tuborg Classic (4.60%) - Denmark</p>
+                    <p>#2: Carlsberg Group - Carlsberg (5.00%) - Denmark</p>
+                    <p>#3: Carlsberg Group - Brewmasters Collection India Pale Ale (5.20%) - Denmark</p>
+                    <p>#4: Carlsberg Group - Tuborg Grøn (4.60%) - Denmark</p>
+                    <p>#5: Jacobsen - Brown Ale (6.00%) - Denmark</p>
+                </section>
+
+                <section>
+                    <h1>The top 5 Beers in Denver</h1>
+                    <p>#1: Great Divide Brewing Company - Titan IPA (7.10%) - United States (CO)</p>
+                    <p>#2: Odell Brewing Co. - 90 Shilling (5.30%) - United States (CO)</p>
+                    <p>#3: Great Divide Brewing Company - Denver Pale Ale (DPA) (5.40%) - United States (CO)</p>
+                    <p>#4: AC Golden Brewing Co. - Colorado Native Amber Lager (5.50%) - United States (CO)</p>
+                    <p>#5: Russian River Brewing Company - Pliny the Elder (8.00%) - United States (CA)</p>
+                </section>
+
+                <section>
+                    <h1>The top 5 Beers in Seattle</h1>
+                    <p>#1: Georgetown Brewing Company - Manny's Pale Ale (5.40%) - United States (WA)</p>
+                    <p>#2: Black Raven Brewing Company - Trickster (6.90%) - United States (WA)</p>
+                    <p>#3: Elysian Brewing - Space Dust IPA (7.20%) - United States (WA)</p>
+                    <p>#4: Mac &amp; Jack's Brewing Company - African Amber (5.60%) - United States (WA)</p>
+                    <p>#5: Fremont Brewing - Interurban IPA (6.20%) - United States (WA)</p>
+                </section>
+
+                <section>
+                    <h2><strong>What strength</strong> beer are they drinking?</h2>
+                </section>
+
+<section data-transition="none" data-markdown><script type="text/template">
+```python
+beer_abvs = defaultdict(list)
+
+for city in CITIES:
+    checkins = checkin_data[city]
+    for c in checkins:
+        beer = bid2beer[c['beer']]
+        beer_abvs[city].append(beer['beer_abv'])
+
+plt.boxplot(beer_abvs.values(), notch=True, showfliers=False, manage_xticks=True)
+```
+</script></section>
+
+            <section data-transition="none" data-background-image="img/abv_boxplot.png" data-background-size="contain">
+            </section>
+
+            <section data-transition="none" data-background-image="img/abv_violin.png" data-background-size="contain">
+            </section>
+
+            <section data-transition="none" data-background-image="img/abv_violin_non_truncated.png" data-background-size="contain">
+            </section>
+
+            <section>
+                <h2><strong>What style</strong> of beer are they drinking?</h2>
+            </section>
+
+
+<section data-transition="none" data-markdown><script type="text/template">
+```python
+global_beer_style_counts = Counter()
+
+for city in CITIES:
+    checkins = checkin_data[city]
+    for c in checkins:
+        beer = bid2beer[c['beer']]
+        b_style = beer['beer_style'].strip()
+        beer_style = beerstyle2tier2[b_style]
+        global_beer_style_counts[beer_style] += 1
+```
+</script></section>
+
+            <section data-transition="none" data-background-image="img/global_beer_styles.png" data-background-size="contain">
+                <h4 style="position: fixed; top: 0px;">Global</h4>
+            </section>
+
+            <section data-transition="none" data-background-image="img/beer_styles_newyork.png" data-background-size="contain">
+                <!-- <h4 style="position: fixed; top: 0px;">New York</h4> -->
+            </section>
+
+            <section data-transition="none" data-background-image="img/beer_styles_london.png" data-background-size="contain">
+                <!-- <h4 style="position: fixed; top: 0px;">London</h4> -->
+            </section>
+
+            <section data-transition="none" data-background-image="img/beer_styles_paris.png" data-background-size="contain">
+                <!-- <h4 style="position: fixed; top: 0px;">Paris</h4> -->
+            </section>
+
+            <section data-transition="none" data-background-image="img/beer_styles_amsterdam.png" data-background-size="contain">
+                <!-- <h4 style="position: fixed; top: 0px;">Amsterdam</h4> -->
+            </section>
+
+
+            <section>
+                <h1>Who?</h1>
+                <p class="fragment">Just under 900,000 Untappd users</p>
+            </section>
+            <section>
+                <h1>Where?</h1>
+                <p class="fragment">New York, Los Angeles, Chicago, Seattle, Denver, Boston, Portland, London, Dublin, Barcelona, Paris, Amsterdam, Copenhagen</p>
+            </section>
+            <section>
+                <h1>What?</h1>
+                <p class="fragment">Higher ABV outside UK &amp; Ireland</p>
+                <p class="fragment">Big global brands dominate (Guinness, Heineken)</p>
+                <p class="fragment">But more variety at local level</p>
+            </section>
+            <section>
+                <h1>When?</h1>
+                <p class="fragment">All the time!</p>
+                <p class="fragment">Especially Friday lunchtime in London</p>
+            </section>
+            <section>
+                <h1>Why?</h1>
+                <p class="fragment">Because it's pretty damn delicious</p>
+            </section>
 
 		</div>
 
@@ -631,7 +872,7 @@ def hour(t):
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'none', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
