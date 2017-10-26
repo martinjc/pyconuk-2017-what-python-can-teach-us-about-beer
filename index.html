@@ -562,6 +562,30 @@ var get_drinks = function(token, lat, lng, callback) {
                     <h1>30,931 breweries</h1>
                 </section>
 
+
+<section data-transition="none" data-markdown><script type="text/template">
+```python
+stats_headers = ['checkins', 'users', 'beers', 'venues', 'breweries', 'days']
+
+stats = pandas.DataFrame(index=CITIES, columns=stats_headers)
+
+for city, checkins in checkin_data.items():
+    user_ids = set(c['user'] for c in checkins)
+    venue_ids = set(c['venue'] for c in checkins if c.get('venue'))
+    beer_ids = set(c['beer'] for c in checkins)
+    brewery_ids = set(c['brewery'] for c in checkins)
+    checkin_times = [c['created_at'] for c in checkins]
+    tdelta = max(checkin_times) - min(checkin_times)
+    days = tdelta.total_seconds()/(60.0 * 60 * 24.0)
+
+    stats['checkins'].loc[city] = len(checkins)
+    stats['users'].loc[city] = len(user_ids)
+    stats['venues'].loc[city] = len(venue_ids)
+    stats['beers'].loc[city] = len(beer_ids)
+    stats['breweries'].loc[city] = len(brewery_ids)
+    stats['days'].loc[city] = days
+```
+</script></section>
                 <section data-background-image="img/checkins_per_city.png" data-background-size="contain">
 
                 </section>
@@ -570,6 +594,21 @@ var get_drinks = function(token, lat, lng, callback) {
 
                 </section>
 
+<section data-transition="none" data-markdown><script type="text/template">
+```python
+def weekday(t):
+    if t.hour < 5:
+        return 6 if t.weekday() == 0 else t.weekday()-1
+    else:
+        return t.weekday()
+
+def hour(t):
+    if t.hour >= 5:
+        return t.hour - 5
+    else:
+        return 19 + t.hour
+```
+</script></section>
 			</div>
 
 		</div>
