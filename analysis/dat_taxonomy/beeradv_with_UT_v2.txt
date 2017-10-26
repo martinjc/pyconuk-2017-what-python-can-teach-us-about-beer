@@ -1,0 +1,442 @@
+=ale-AmericanAles
+American Amber / Red Ale
+Red Ale - American Amber / Red
+American Barleywine
+Barleywine - American
+American Black Ale
+American Blonde Ale
+American Brown Ale
+Brown Ale - American
+American Dark Wheat Ale
+American Double / Imperial IPA
+American Double / Imperial Stout
+American IPA
+IPA - American
+IPA - New England
+American Pale Ale (APA)
+Pale Ale - American
+American Pale Wheat Ale
+Pale Wheat Ale - American
+American Porter
+Porter - American
+American Stout
+Stout - American
+American Strong Ale
+Strong Ale - American
+American Wild Ale
+Sour - American Wild Ale
+Black & Tan
+Chile Beer
+Cream Ale
+Pumpkin Ale
+Rye Beer
+Rye Beer / Rye IPA
+Rye IPA
+IPA - Red
+Wheatwine
+Wheat Wine
+American Imperial / Double Stout
+Stout - American Imperial / Double
+
+Imperial / Double Brown Ale
+Brown Ale - Imperial / Double
+Imperial / Double Red Ale
+Red Ale - Imperial / Double
+Red Ale - Other
+Imperial / Double Black IPA
+IPA - Imperial / Double Black
+Imperial Oatmeal Stout
+Stout - Imperial Oatmeal
+American Pale Ale
+White IPA
+IPA - White
+Pumpkin / Yam Beer
+Pumpkin / Yam Beer - Imperial
+Root Beer
+Black IPA / Cascadian Dark Ale
+IPA - Black / Cascadian Dark Ale
+
+
+
+
+=ale-NewZealandAles
+New Zealand Pale Ale
+Pale Ale - New Zealand
+
+
+
+
+=ale-/FrenchAles
+Belgian Brown Ale
+Belgian Brown Ale
+Brown Ale - Belgian
+Belgian Dubbel
+Belgian Tripel
+Belgian Quad
+Belgian Dark Ale
+Belgian IPA
+IPA - Belgian
+Belgian Pale Ale
+Pale Ale - Belgian
+Belgian Strong Dark Ale
+Belgian Strong Golden Ale
+Belgian Strong Pale Ale
+Bière de Champagne / Bière Brut
+Bière de Garde
+Dubbel
+Faro
+Flanders Oud Bruin
+Sour - Flanders Oud Bruin
+Flanders Red Ale
+Sour - Flanders Red Ale
+Sour - Gueuze
+Gueuze
+Lambic - Gueuze
+Lambic - Faro
+Lambic - Fruit
+Lambic - Unblended
+Lambic - Other
+Lambic - Framboise
+Lambic - Traditional
+Quadrupel (Quad)
+Saison / Farmhouse Ale
+Sour - Farmhouse IPA
+Grisette
+Tripel
+Witbier
+Lambic - Kriek
+Patersbier
+Bière de Champagne / Bière Brut
+
+Belgian Ale (Decommissioned)
+Lambic
+Belgian Blond(e)
+Belgian Blonde / Golden
+Blonde Ale - Belgian Blonde / Golden
+Bière de Garde
+
+
+
+
+=ale-EnglishAles
+Baltic Porter
+Porter - Baltic
+Braggot
+English Barleywine
+Barleywine - English
+English Bitter
+English Brown Ale
+Brown Ale - English
+English Dark Mild Ale
+English India Pale Ale (IPA)
+English Pale Ale
+Pale Ale - English
+English Pale Mild Ale
+English Porter
+Porter - English
+English Stout
+English Strong Ale
+Strong Ale - English
+Extra Special / Strong Bitter (ESB)
+Foreign / Export Stout
+Stout - Foreign / Export
+Milk / Sweet Stout
+Stout - Milk / Sweet
+Stout - Imperial Milk / Sweet
+Oatmeal Stout
+Stout - Oatmeal
+Old Ale
+Russian Imperial Stout
+Stout - Russian Imperial
+Winter Warmer
+
+English Mild Ale
+English IPA
+IPA - English
+Burton Ale
+
+English Ale (Decommissioned)
+
+
+
+
+=ale-FinnishAles
+Sahti
+
+
+
+
+=ale-GermanAles
+Altbier
+Berliner Weissbier
+Weissbier
+Dunkelweizen
+Gose
+Hefeweizen
+Kölsch
+Kristalweizen
+Kristallweizen
+Roggenbier
+Weizenbock
+Kristallweizen
+Sour - Berliner Weisse
+Berliner Weisse
+Hefeweizen Light / Leicht
+Oktoberfest/Festbier/Märzen
+Festbier / Oktoberfestbier
+Festbier
+Mumme
+
+
+
+
+=ale-IrishAles
+Irish Dry Stout
+Stout - Irish Dry
+Irish Red Ale
+Red Ale - Irish
+
+
+
+
+=ale-Australian
+Australian Pale Ale
+Pale Ale - Australian
+Pale Ale- Australian
+Australian Sparkling Ale
+
+
+
+
+=ale-RussianAles
+Kvass
+
+
+
+
+=ale-ScottishAles
+Scotch Ale / Wee Heavy
+Scottish Ale
+Scottish Gruit / Ancient Herbed Ale
+
+Scottish Export Ale
+
+
+
+
+=lager-AmericanLagers
+American Adjunct Lager
+American Amber / Red Lager
+Lager - American Amber / Red
+American Double / Imperial Pilsner
+American Malt Liquor
+American Pale Lager
+California Common / Steam Beer
+Light Lager
+Low Alcohol Beer
+Pale Lager
+Lager - Pale
+Lager - Amber
+Amber Lager
+Lager - Dark
+
+California Common
+American Light Lager
+Lager - American Light
+North American Adjunct Lager
+Lager - North American Adjunct
+
+
+
+
+=lager-CzechLagers
+Czech Pilsener
+Pilsner - Czech
+Pilsener - Czech
+Lager - Czech Dark
+
+
+
+
+=lager-EuropeanLagers
+Euro Dark Lager
+Lager - Euro Dark
+Euro Pale Lager
+Euro Strong Lager
+Lager - Euro Strong
+Euro Lager
+Lager - Euro
+
+
+
+
+=lager-GermanLagers
+Dampfbier
+Dunkel Munich Lager
+Bock
+Doppelbock
+Doppelbock
+Doppelbock
+Dortmunder / Export Lager
+Lager - Dortmunder / Export
+Eisbock
+German Pilsener
+Pilsner - German
+Kellerbier / Zwickelbier
+Maibock / Helles Bock
+Maibock / Heller (Helles) Bock
+Märzen / Oktoberfest
+Munich Dunkel Lager
+Lager - Dunkel Munich
+Munich Helles Lager
+Rauchbier
+Schwarzbier
+Vienna Lager
+Lager - Vienna
+Lager - Vienna / Amber
+Lager -  Vienna / Amber
+Maibock/Helles Bock
+
+German Pilsner
+Helles Lager
+Lager - Helles
+
+Märzen
+Zoigl
+
+
+
+
+=lager-Polish
+Grätzer / Grodziskie
+
+
+
+
+=lager-JapaneseLagers
+Happoshu
+Japanese Rice Lager
+Lager - Japanese Rice
+
+
+
+
+=hybrid-Fruit/VegetableBeer
+Smoked Beer
+Chili Beer
+Gruit / Ancient Herbed Ale
+Herbed / Spiced Beer
+Herbed/Spiced Beer
+Spiced / Herbed Beer
+
+
+
+
+=ale-OtherAles
+Dark Ale
+Stout
+Oyster Stout
+Stout - Oyster
+Imperial / Double Stout
+Stout - Imperial / Double
+Porter
+Extra Special / Strong Bitter
+Triple IPA
+Session IPA
+Imperial Pale Ale
+Winter Ale
+Brown Ale - Other
+Imperial / Double IPA
+IPA - Imperial / Double
+Imperial / Double Porter
+Porter - Imperial / Double
+Blonde Ale
+Golden Ale
+Sour
+Sour Ale
+Sour - Ale
+Sour - Gose
+Barleywine - Other
+
+Harvest Ale
+Fruit Beer
+Table Beer
+
+IPA - International
+Pale Ale - International
+IPA - Session / India Session Ale
+IPA - Triple
+Porter - Other
+Stout - Other
+Traditional Ale
+
+Honey Beer
+
+
+=lager-OtherLagers
+Imperial / Double Pilsner
+Pilsner - Imperial / Double
+Black Lager
+Lager - Red
+Lager - Black
+Pilsner
+Pilsner - Other
+Blonde Lager
+Winter Lager
+Lager - Winter
+IPL (India Pale Lager)
+Lager - IPL (India Pale Lager)
+Golden Lager
+
+
+
+
+=other-Mead
+Cyser
+Mead
+Mead - Melomel
+Mead - Cyser
+Mead - Metheglin
+Mead - Braggot
+Mead - Other
+Melomel
+Pyment
+
+
+
+
+=other-Health
+Gluten-Free
+
+
+
+
+=other-LowAlcohol
+Non-Alcoholic
+Radler
+Malt Beer
+Shandy / Radler
+
+
+
+
+=other-Cider/Perry
+Cider
+Perry
+
+
+
+
+=other-NotBeer
+Kombucha
+Ginger Beer
+Applewine
+
+
+
+
+=other-Unclassified
+Specialty Grain
+Malt Liquor
+Malt Liquor
+Other
